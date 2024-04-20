@@ -1,0 +1,22 @@
+version: '3'
+services:
+  my-vite-frontend:
+    image: mcr.microsoft.com/devcontainers/base:jammy
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    # links:
+    #   - my-cloud-backend
+    # ...
+
+  # my-cloud-backend:
+  #   build:
+  #     context: ./backend/.devcontainer
+  #     dockerfile: Dockerfile
+  #   # image: mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated6.0-core-tools
+  #   volumes:
+  #     # Mount the root folder that contains .git
+  #     - .:/workspace:cached
+  #   command: /bin/sh -c "while sleep 1000; do :; done"
+  #   # ...
